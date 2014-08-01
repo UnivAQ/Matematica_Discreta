@@ -1,0 +1,27 @@
+Artin:
+- capitolo 1;
+- capitolo 2;
+- capitolo 3;
+- capitolo 4 paragrafi 1-6;
+- capitolo 5 paragrafo 1;
+- capitolo 10 paragrafi 1, 2, 3;
+- capitolo 11 paragrafi 1, 2;
+- capitolo 13 paragrafo 1, 5.
+
+Herstein:
+- capitolo 1;
+- capitolo 2 paragrafi 1-8, 10;
+- capitolo 3 paragrafi 1, 3, 4, 9;
+- capitolo 4;
+- capitolo 5 paragrafo 1.
+
+Algebretta:
+- capitoli 5-9, 11, 15.
+
+Testi consigliati:
+- Il quaderno "Algebretta" di B. Scimemi;
+- Il libro "Argomenti di algebra" di I. N. Herstein.
+
+Note:
+[1] Gli intervalli si intendono compresi degli estremi.
+    Esempio: 1-6 indica 1 e 6 compresi.

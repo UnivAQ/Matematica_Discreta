@@ -1,0 +1,66 @@
+* Gruppi
+definizione gruppo
+definizione sottogruppo
+definizione gruppo abeliano
+sottogruppo alterno
+dimostrazione che in un gruppo abeliano due identità e due inversa sono in verità lo stesso elemento
+legge di cancellazione
+sia G un gruppo e S un suo sottogruppo. S sottogruppo ⇔ xy­1 € W
+definizione di equivalenza in un gruppo
+teorema di lagrange
+definizione sottogruppo normale
+definizione classe laterale
+definizione omomorfismo
+definizione gruppo­quoziente
+teor: Se w è un omomorfismo => Im(w) <= G (dove G è il gruppo che contiene tutte le img di w) teor: ker(w) è sottogruppo normale di G (G è il gruppo che contiene le controimmagini) teorema dell’omomorfismo
+
+* Permutazioni
+definizione permutazione
+principio dei cassetti (peugeons hole)
+teor: la composizione non è commutativa
+teor: le permutazioni formano un gruppo
+teor: Sn ammette n! permutazioni
+def. ordine di una permutazione
+def. cicli disgiunti
+N(permutazione) e lunghezza di un ciclo; classe e segno di una permutazione (cicli) teor: N(permutazione) pari => la permutazione si può scomporre in un numero pari di trasposizioni
+
+* Algebra modulare
+def. congruenza
+teor: i numeri modulo n specificano una relazione di equivalenza def. classe resto
+teor: Z (mod p) è un campo ⇔ p è primo
+teor: se (z,m)=1 e xz=yz(mod m) => x = y(mod m) teor: cx=b(mod m) ammette soluzioni ⇔ (m,c) | b
+
+* Introduzione
+def. relazione equivalenza
+def. classe di equivalenza
+def. partizione di un insieme
+teor sul legame tra classe di equivalenza e partizione def. divisibilità
+def. MCD
+def. mcm
+teor: algoritmo di Euclide
+teor: se MCD > 0 => MCD unico
+teor: esistenza del MCD
+def. numeri coprimi
+identità di Bèzout
+def. numero primo
+teor.: se (a,b) = 1 e a | bc => a | c teor: se a | m, b | m, (a,b)=1 => ab | m def. mcm
+teor: [a,b](a,b) = ab
+teorema fondamentale dell’algebra teorema fondamentale dell’aritmetica teor: i numeri primi sono infiniti
+teor: funzione di Eulero
+
+* Anelli
+def. anello
+def. sottoanello
+def. ideale
+anello dei polinomi
+MCD polinomi
+divisione con resto dei polinomi
+teor: se f,g != 0 sono polinomi in K[x] allora esistono unici polinomi q,r (oppure r=0) di cui il grado di r è minore di quello di g t.c. f = qg + r.
+teor: (f,g) = af + bg
+def. polinomi primi (irriducibili)
+teor: f € K[x] si fattorizza come f = cf1 * ... * fr e fi è irriducibile
+def. f congruo g mod m
+teor: K[x] / (f) è un campo
+costruzione del campo dei complessi tramite R[x] / (x^2+1) (isomorfismo)
+teor. di omomorfismo per gli anelli (pag 427 finale di Artin)
+nota: dove ho scritto “teor” c’è anche la dimostrazione.

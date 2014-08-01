@@ -1,0 +1,315 @@
+\documentclass[a4paper]{report}
+
+\usepackage[top=1cm, bottom=1cm]{geometry}
+\usepackage{amsmath}    % {aligned}
+\usepackage{amssymb}    % \mathbb
+\usepackage{mathtools}  % {dcases}
+\usepackage{relsize}    % \mathlarger
+\usepackage{soul}       % \ul
+\usepackage{tikz}       % \tikz, \node
+\usepackage{mdframed}   % {mdframed}
+
+\newenvironment{problem}
+        {
+                \begin{mdframed}[topline=false,rightline=false,bottomline=false]
+                        \slshape
+        }
+        {
+                \end{mdframed}
+        }
+
+\newcommand*\circled[1]{
+        \tikz[baseline=(char.base)]{
+                \node[shape=circle,draw,inner sep=1pt] (char) {#1};
+        }
+}
+
+
+\begin{document}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A1}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare se i tre vettori di $\mathbb{R}^3: (1,2,-2), (-1,3,3) \mbox{ e } (1,3,-2)$
+                siano o no linearmente indipendenti.
+        \end{problem}
+
+        \subsection*{Metodo 1}
+        Se $det(M_{atrice}) \neq 0$ allora i vettori sono linearmente indipendenti.
+        \[
+                M =
+                \begin{pmatrix}
+                        1  & -1 &  1 \\
+                        2  &  3 &  3 \\
+                        -2 &  3 & -2
+                \end{pmatrix};
+        \]
+
+        $
+                det(M) = (1 \cdot 3 \cdot -2) + (-1 \cdot 3 \cdot -2) + (1 \cdot 2 \cdot 3) - (1 \cdot 3 \cdot -2) - (-1 \cdot 2 \cdot -2) - (1 \cdot 3 \cdot 3) = -6 + 6 + 6 + 6 -4  -1.
+        $
+
+        \paragraph{}
+        Il determinante \`{e} diverso da zero, quindi possiamo concludere che \ul{i vettori sono linearmente indipendenti}.
+
+        \subsection*{Metodo 2}
+        Se $ a v_1 + b v_2 + c v_3 = 0 $ \`{e} risolto solo per $(a, b, c) = (0, 0, 0)$
+        allora i vettori sono linearmente indipendenti.
+
+        \paragraph{}
+        $
+                a \begin{pmatrix} 1 \\ 2 \\ -2 \end{pmatrix} + b \begin{pmatrix} -1 \\ 3 \\ 3 \end{pmatrix} + c \begin{pmatrix} 1 \\ 3 \\ -2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+        $
+
+        \paragraph{}
+        $
+                \begin{dcases}
+                        a   - b  + c  & = 0 \\
+                        2a  + 3b + 3c & = 0 \\
+                        -2a + 3b - 2c & = 0
+                \end{dcases}; \quad \begin{aligned}
+                        a & = b - c \\
+                        2a  + 3b + 3c & = 0 \\
+                        b & = 0
+                \end{aligned}; \quad \begin{aligned}
+                        a & = 0 \\
+                        c & = 0 \\
+                        b & = 0
+                \end{aligned} \quad .
+        $
+
+        \paragraph{}
+        $(0,0,0)$ \`{e} l'unica soluzione del sistema, quindi possiamo concludere
+        che \ul{i vettori sono linearmente indipendenti}.
+
+        \subsection*{}
+        \begin{problem}
+                Determinare la dimensione del sottospazio da essi generato.
+        \end{problem}
+
+        \paragraph{}
+        I tre vettori costituiscono una base, essendo linearmente indipendenti
+        ed essendo un sistema di generatori (avendo rango massimo, ovvero uguale a 3).
+        Concludiamo che \ul{$dim(\{v_1, v_2, v_3\}) = 3$, ovvero tutto $\mathbb{R}^3$}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A2}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare il nucleo della trasformazione lineare da $\mathbb{R}^3$ in $\mathbb{R}^3$ rappresentata, rispetto alla base canonica, dalla seguente matrice:
+                \[
+                        \begin{pmatrix}
+                               1 & 2 & 4 \\
+                               0 & 1 & 2 \\
+                               1 & 0 & 3
+                        \end{pmatrix}.
+                \]
+        \end{problem}
+
+        \paragraph{}
+        Il nucleo \`{e} l'insieme di vettori soluzione del sistema di equazioni omogeneo $Ax = 0$.
+        Quindi per trovarlo \`{e} sufficiente trovare le soluzioni del sistema:
+        \[
+                \begin{dcases}
+                        x + 2y + 4z & = 0 \\
+                        y + 2z      & = 0 \\
+                        x + 3z      & = 0
+                \end{dcases}
+                \begin{aligned}
+                        x  & = 0 \\
+                        y  & = 0 \\
+                        z  & = 0
+                \end{aligned}.
+        \]
+
+        \framebox{$Ker(F) = \{\}$ e $dim(Ker(F)) = 0$}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A3}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare gli autovalori e gli autovettori della seguente matrice:
+                $
+                        \begin{pmatrix}
+                                4 & 2 & 0 \\
+                                1 & 3 & -1 \\
+                                0 & 0 & -3
+                        \end{pmatrix}.
+                $
+        \end{problem}
+
+        \paragraph{}
+        Sfruttiamo la definizione di autovalore ed autovettore:
+        $A_{f} - \lambda I$ deve essere non invertibile,
+        ovvero il $det(A_{f} - \lambda I) = 0$.
+
+        \[
+                A_{f} -\lambda I = \begin{pmatrix}
+                        4 & 2 & 0 \\
+                        1 & 3 & -1 \\
+                        0 & 0 & -3
+                \end{pmatrix} - \begin{pmatrix}
+                        \lambda & 0       & 0 \\
+                        0       & \lambda & 0 \\
+                        0       & 0       & \lambda
+                \end{pmatrix} = \begin{pmatrix}
+                        4 - \lambda & 2 & 0 \\
+                        1 & 3 - \lambda & -1 \\
+                        0 & 0 & -3 - \lambda
+                \end{pmatrix};
+        \]
+
+        \[
+                det(A_{f} - \lambda I) = (- 3 - \lambda) [ (4 - \lambda) (3 - \lambda) - 2) ] = (- 3 - \lambda) (10 - 7 \lambda + \lambda^{2}) = 0 ;
+        \]
+
+        \paragraph{}
+        $
+                \lambda_{1} = - 3;
+        $
+
+        \paragraph{}
+        $
+                \lambda_{2,3} = \mathlarger{\frac{7 \pm \sqrt{49 - 10 }}{2}} = \mathlarger{\frac{7 \pm 6}{2}} = 13/2, 1/2;
+        $
+
+        \paragraph{}
+        Per l'autovalore \framebox{$\lambda_1 = -3$}:
+
+        \[
+                \begin{pmatrix}
+                        7 & 2 & 0 \\
+                        1 & 6 & -1 \\
+                        0 & 0 & 0
+                \end{pmatrix} \begin{pmatrix}
+                        x \\
+                        y \\
+                        z
+                \end{pmatrix} = \begin{pmatrix}
+                        0 \\
+                        0 \\
+                        0
+                \end{pmatrix} \implies
+                \begin{dcases}
+                        7x + 2y & = 0 \\
+                        x + 6y - z & = 0 \\
+                        0 = 0
+                \end{dcases}\;; \quad \begin{aligned}
+                        7w + 2y & = 0 \\
+                        w + 6y - z & = 0 \\
+                        x = w
+                \end{aligned}\;; \quad \begin{aligned}
+                        y & = -7/2w \\
+                        z & = -20w \\
+                        x & = w
+                \end{aligned} \; ;
+        \]
+
+        l'autovetore \`{e} $(w, -7/2w, -20w)$, ovvero \framebox{$w(1, -7/2, -20)$}.
+
+        \paragraph{}
+        Per gli autovalori $\lambda_2$ e $\lambda_3$ si applica lo stesso procedimento.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B1}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare gli interi $a,b$ tali che $ 10a + 23b = 1 $.
+        \end{problem}
+
+        \paragraph{}
+        Sfruttiamo il teorema di B\'{e}zout.\\
+        \emph{
+                Se $a,b$ sono interi e $(a,b)$ \`{e} il loro massimo comune divisore,
+                allora esistono interi $h,k$ tali che
+                $ ha + kb = (a, b) $.
+        }
+
+        \paragraph{$MCD(10,23)$:}
+        {
+                \setlength{\tabcolsep}{2pt}
+                \begin{tabular}{r l l l}
+                        23 = & 10 & * 2 + \circled{1}; \\
+                        10 = & 2  & * 5 + \ul{0}.
+                \end{tabular}
+        }
+
+        \paragraph{}
+        Il massimo comune divisore di $10$ e $23$ \`{e} proprio $1$,
+        quindi il teorema di B\'{e}zout ci garantisce che esistono due interi che soddisfano l'equazione.
+
+        \noindent
+        Per ricavarli \`{e} sufficiente risalire ricorsivamente (in questo caso si tratta di un solo passaggio) l'algoritmo di Euclide tenendo a mente che
+        $ a = qb + r \implies r = a - qb $
+
+        \paragraph{}
+        Quindi $1 = 23 - 10 \cdot 2$, con \framebox{$ a = -2, b = 1 $}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B2}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Quali sono gli argomenti dei numeri complessi $z$ di modulo $3$ tali che $Re(z) + Im(z) = 0$?
+        \end{problem}
+
+        \paragraph{}
+        Affinch\'{e} sia $Re(z) + Im(z) = 0$ deve valere che $Re(z) = - Im(z)$, ovvero $x = -iy$, quindi $iy = -x$.
+
+        \paragraph{}
+        $
+                |z| = \sqrt{{Re(z)}^2 + {Im(z)}^2} = \sqrt{x^2 + x^2} = x \sqrt{2} = 3 \quad \implies \quad
+                x = \frac{3}{\sqrt{2}};
+        $
+
+        \paragraph{}
+        $
+                \begin{aligned}
+                        x & = |z| \cos{\theta} \implies
+                                \frac{3}{\sqrt{2}} = 3 \cos{\theta} \implies
+                                \cos{\theta} = \frac{1}{\sqrt{2}} \\
+                        y & = |z| \sin{\theta} \implies
+                                -\frac{3}{\sqrt{2}} = 3 \sin{\theta} \implies
+                                \sin{\theta} = -\frac{1}{\sqrt{2}}
+                \end{aligned};
+                \quad \implies \quad
+        $
+        \framebox{$\theta = \frac{\pi}{4} + k 2 \pi$}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B3}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare la parit\`{a} della permutazione (247536)(45)(1745932) in $S_{11}$.
+        \end{problem}
+
+        \paragraph{}
+        $
+                \begin{aligned}
+                        1 & \to 7 \to 5; \\
+                        5 & \to 9; \\
+                        9 & \to 3 \to 6; \\
+                        6 & \to 2; \\
+                        2 & \to 1. \\
+                        \hline
+                        3 & \to 2 \to 4; \\
+                        4 & \to 5 \to 4 \to 7; \\
+                        7 & \to 4 \to 5 \to 3. \\
+                        \hline
+                \end{aligned}
+        $
+
+        \paragraph{}
+        $ (15962)(347) $
+
+        \paragraph{}
+        $ (5 - 1) + (3 - 1) = 6 $ \framebox{Pari (+1)}.
+
+        \paragraph{Extra:}
+        $ (12)(16)(19)(15)(37)(34) $.
+
+\end{document}

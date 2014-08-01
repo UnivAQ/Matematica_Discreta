@@ -1,0 +1,222 @@
+\documentclass[a4paper]{article}
+
+\usepackage[top=1cm, bottom=1cm]{geometry}
+\usepackage{setspace}   % {spacing}
+\usepackage{color,soul} % \hl
+\usepackage{relsize}    % \mathlarger
+\usepackage{amssymb}    % \mathbb
+\usepackage{amsmath}    % {aligned}
+\usepackage{mathtools}  % {dcases}
+\usepackage{hyperref}   % \href
+
+\hypersetup{colorlinks=true,urlcolor=cyan}
+
+
+\renewcommand\labelitemi{\textperiodcentered}
+% \textendash, \textperiodcentered
+
+
+\begin{document}
+        \section*{Rette nel piano}
+                \paragraph{Equazione della retta:}
+                        \framebox{$ ax + by + c = 0 $} o \framebox{$ y = mx + q $}.
+
+                        Se $ q = 0 $ la retta passa per l'origine.
+
+
+                \paragraph{Coefficiente angolare:}
+                        (Di una retta)
+                        \framebox{
+                                $
+                                        m = - \mathlarger{\frac{a}{b}}
+                                $
+                        }
+                        \quad
+                        \framebox{
+                                $
+                                        m = \mathlarger{\frac{y_2 - y_1}{x_2 - x_1}}
+                                $
+                        }
+                        (Fra due punti)
+
+                        La retta perpendicolare ha coefficiente angolare $ m' = - \frac{1}{m} $.
+
+                        % Non chiaro.
+                        % Con $a$ e $b$ coefficienti del vettore ortogonale alla retta.
+
+                \paragraph{Fascio di rette:}
+                        (Esplicita) \framebox{$ y - y_0 = m (x - x_0) $} \qquad \framebox{$ a (x - x_0) + b (y - y_0) = 0 $} (Implicita)
+
+                \paragraph{Retta passante per due punti:}
+                        \framebox{$ \mathlarger{\frac{y - y_1}{y_2 - y_1} = \frac{x - x_1}{x_2 - x_1}} $}
+
+                        Oppure si impone il passagio per il primo punto, si ricava il coefficiente angolare e si impone il passaggio per il secondo punto.
+
+                \paragraph{Intersezione fra rette:}
+                        Si mettono a sistema le equazioni.
+                        \begin{itemize}
+                                \item Se il sistema \`{e} impossibile le rette sono parallele.
+                                \item Se il sistema \`{e} indeterminato le rette sono coincidenti.
+                        \end{itemize}
+
+                \paragraph{Distanza tra due punti:}
+                        \framebox{$ d(P_1, P_2) = \sqrt{ (x_2 - x_1)^2 + (y_2 - y_1)^2 } $}
+
+                \paragraph{Distanza punto retta:}
+                        \begin{enumerate}
+                                \item Si individua il coefficiente angolare della retta perpendicolare alla retta data;
+                                \item Si costruisce un fascio proprio in P e si sceglie la retta perpendicolare;
+                                \item Si individua il punto di intersezione H tra la retta data e la perpendicolare;
+                                \item Si calcola la distanza PH.
+                        \end{enumerate}
+
+                        oppure
+
+                        (Implicita) \framebox{$ d(P, r) = \mathlarger{\frac{| ax_0 + by_0 + c |}{\sqrt{a^2 + b^2}}} $} \qquad \framebox{$ d(P, r) = \mathlarger{\frac{| y_0 - mx_0 - q |}{\sqrt{1 + m^2}}} $} (Esplicita)
+
+        \section*{Piano}
+                \paragraph{Equazione del piano:}
+                        $a x + b y + c z + d = 0$
+
+                \paragraph{}
+                        $a, b, c$ sono i parametri direttori del piano, o anche i coefficienti dei vettori ortogonali al piano.
+
+                \paragraph{Piani paralleli:}
+                        Due piani sono paralleli se differiscono unicamente per il coefficiente $d$.
+
+                \paragraph{Fascio di piani paralleli:}
+                        Dato un generico piano $\pi: ax + by + cz + d = 0$, il fascio di piani paralleli a $\pi$ ha equazione $ax + by + cz + k = 0$, con $k \in \mathbb{R}$.
+
+                \paragraph{Fascio di piani passanti per una retta:}
+                        Data una retta $r$ descritta come intersezione fra due piani,
+                        il fascio di piani passanti per $r$ ha equazione
+                        \[
+                                k(a_1 x + b_1 y + c_1 z + d_1) + j(a_2 x + b_2 y + c_2 z + d_2) = 0
+                        \]
+
+                        Porre $\frac{j}{k} = h$ e sviluppare.
+
+                \paragraph{Piano con un punto ed un vettore ortogonale:}
+                        Con $v = (a, b, c)$ e $P = (x_0, y_0, z_0)$,
+
+                        $a x_0 + b y_0 + c z_0 + d = 0 \quad \rightarrow \quad d = -(a x_0 + b y_0 + c z_0)$
+
+                        \[ a x + b y + c z - (a x_0 + b y_0 + c z_0) = 0 \]
+
+                \paragraph{Problemi svolti:}\hfill\newline
+                        \href{https://it.answers.yahoo.com/question/index?qid=20100117132609AAuoK0i}{Piano contenente una retta e perpendicolare ad un'altra retta}\newline
+                        \href{http://www.youmath.it/forum/algebra-lineare/3410-piano-passante-per-un-punto-e-parallelo-a-due-rette-esercizio.html}{Piano contenente un punto e parallelo a due rette}
+
+        \section*{Rette nello spazio}
+                \paragraph{Equazione di una retta come intersezione di due piani:}
+                        \[
+                                r: \begin{dcases}
+                                        \begin{aligned}
+                                                a_1 x + b_1 y + c_1 z + d_1 & = 0 \\
+                                                a_2 x + b_2 y + c_2 z + d_2 & = 0
+                                        \end{aligned}
+                                \end{dcases}
+                        \]
+                        con $(a_1 x + b_1 y + c_1 z + d_1) \neq k(a_2 x + b_2 y + c_2 z + d_2)$ e $k \in \mathbb{R}$ (ipotesi di indipendenza lineare).
+
+                \paragraph{}
+                        Il vettore direzione della retta \`{e} $ v = (a_1, b_1, c_1) \times (a_2, b_2, c_2) $.
+
+                \paragraph{Moltiplicazione tra vettori:}
+                        \[
+                                \begin{aligned}
+                                        (a_1, b_1, c_1) \times (a_2, b_2, c_2) = det \begin{bmatrix}x & y & z \\ a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \end{bmatrix} & = b_1 c_2 x + c_1 a_2 y + a_1 b_2 z - a_2 b_1 z - a_1 c_2 y - c_1 b_2 x \\
+                                                   & = (b_1 c_2 - c_1 b_2)x + (c_1 a_2 - a_1 c_2)y + (a_1 b_2 - b_1 a_2)z \\
+                                                   & = [ (b_1 c_2 - c_1 b_2), (c_1 a_2 - a_1 c_2), (a_1 b_2 - b_1 a_2)].
+                                \end{aligned}
+                        \]
+
+                \noindent
+                \parbox{0.3 \linewidth}{
+                        \paragraph{Equazione parametrica di una retta:}
+                                \[
+                                        r: \begin{dcases}
+                                                x = x_0 + ta \\
+                                                y = y_0 + tb \\
+                                                z = z_0 + tc
+                                        \end{dcases}
+                                \]
+                                Il vettore direzione della retta \`{e} $ v =(a, b, c) $.
+                } \hspace{20pt}
+                \parbox{0.3 \linewidth}{
+                        \paragraph{Retta passante per due punti:}
+                                \[
+                                        r: \begin{dcases}
+                                                x = x_1 + t (x_2 - x_1)\\
+                                                y = y_1 + t (y_2 - y_1)\\
+                                                z = z_1 + t (z_2 - z_1)
+                                        \end{dcases}
+                                \]
+                } \hspace{20pt}
+                \parbox{0.3 \linewidth}{
+                        \paragraph{Retta passante per un punto o con vettore direzione od ortogonale ad un piano:}
+                                \[
+                                \begin{dcases}
+                                        \frac{x - x_0}{a} = \frac{y - y_0}{b} \\
+                                        \frac{y - y_0}{b} = \frac{z - z_0}{c}
+                                \end{dcases}
+                                \]
+                }
+
+                \paragraph{Rette parallele:}
+                        Le rette
+                        \[
+                                r: \begin{dcases}
+                                        x = x_1 + t a_1 \\
+                                        y = y_1 + t b_1 \\
+                                        z = z_1 + t c_1
+                                \end{dcases} \hspace{20pt}
+                                s: \begin{dcases}
+                                        x = x_2 + t a_2 \\
+                                        y = y_2 + t b_2 \\
+                                        z = z_2 + t c_2
+                                \end{dcases}
+                        \]
+                        \begin{itemize}
+                                \item sono parallele se $(a_1, b_1, c_1) = k (a_2, b_2, c_2)$, con $k \in \mathbb{R} \backslash \{0\}$ (i vettori sono paralleli);
+                                \item sono ortogonali se $a_1 a_2 + b_1 b_2 + c_1 c_2 = 0$ (i vettori sono ortogonali).
+                        \end{itemize}
+
+        \section*{Circonferenza}
+                \[
+                        x^2 + y^2 - 2ax - 2by + c = 0 \quad\mbox{ con }\quad c = a^2 + b^2 - r^2
+                \]
+
+                \paragraph{Centro:}
+                        $C = (a, b)$.
+
+                \paragraph{Raggio:}
+                        $r = \sqrt{a^2 + b^2 - c}$.
+
+        \section*{Ellisse}
+                \paragraph{}
+                        $ \mathlarger{\frac{x^2}{a^2}} + \mathlarger{\frac{y^2}{b^2}} = 1 $
+
+                \paragraph{Fuochi:}\hfill\newline
+                        Se $a^2 > b^2$ allora $F_1 = (c, 0)$, $F_2 = (-c, 0)$, $c = \sqrt{a^2 - b^2}$.\newline
+                        Se $a^2 < b^2$ allora $F_1 = (0, c)$, $F_2 = (0, -c)$, $c = \sqrt{b^2 - a^2}$.
+
+                \paragraph{Vertici:}
+                        $(a, 0)$, $(-a, 0)$, $(0, b)$, $(0, -b)$.
+
+        \section*{Coniche}
+                \paragraph{Equazione generale di una conica:}
+                        $ ax^2 + bxy +cy^2 + dx + ey + f = 0 $
+
+                \paragraph{}
+                        Il termine $bxy$ si chiama termine rettangolare.
+
+                \paragraph{}
+                        Sia il $\Delta = b^2 - 4ac$, allora se:
+                        \begin{itemize}
+                                \item $\Delta > 0$ \`{e} un'iperbole;
+                                \item $\Delta < 0$ \`{e} un'ellisse;
+                                \item $\Delta = 0$ \`{e} una parabola.
+                        \end{itemize}
+
+\end{document}

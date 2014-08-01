@@ -1,0 +1,267 @@
+\documentclass[a4paper]{report}
+
+
+\usepackage[top=1cm, bottom=1cm]{geometry}
+\usepackage{amsmath}    % {aligned}
+\usepackage{amssymb}    % \mathbb
+\usepackage{mathtools}  % {dcases}
+\usepackage{relsize}    % \mathlarger
+\usepackage{soul}       % \ul
+\usepackage{tikz}       % \tikz, \node
+\usepackage{mdframed}   % {mdframed}
+
+
+\newenvironment{problem}
+        {
+                \begin{mdframed}[topline=false,rightline=false,bottomline=false]
+                        \slshape
+        }
+        {
+                \end{mdframed}
+        }
+
+\newcommand*\circled[1]{
+        \tikz[baseline=(char.base)]{
+                \node[shape=circle,draw,inner sep=1pt] (char) {#1};
+        }
+}
+
+
+\begin{document}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A1}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare se i vettori $ (1,0,2,-1),(3,3,1,2),(-3,1,0,4),(4,-1,2,-5) $ sono o no una base di $\mathbb{R}^4$.
+        \end{problem}
+
+        \paragraph{}
+        Affinch\'{e} i vettori siano una base devono essere un sistema di generatori e devono essere linearmente indipendenti.
+
+        \paragraph{}
+        Sia
+        \[
+                M = \begin{pmatrix}
+                        1 & 3 & -3 & 4 \\
+                        0 & 3 & 1 & -1 \\
+                        2 & 1 & 0 & 2  \\
+                        -1  & 2 & 4 & -5
+                \end{pmatrix}
+        \]
+        la matrice dei vettori disposti per colonna,
+        verifichiamo se sono linearmente indipendenti controllando se il $ det(M) \not= 0 $.
+
+        \[
+                det(M) = -46
+        \]
+        quindi i vettori sono linearmente indipendenti.
+        Da ci\`{o} ne deriva che il rango della matrice \`{e} massimo, ovvero 4,
+        e quindi sono un sistema di generatori.
+
+        Di conseguenza \ul{sono una base di $ dim(M) = 4 $ e quindi generano tutto $\mathbb{R}^4$}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A2}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare il rango della trasformazione lineare da $\mathbb{R}^3$ in $\mathbb{R}^3$ rappresentata, rispetto alla base canonica, dalla seguente matrice:
+                \[
+                        \begin{pmatrix}
+                               4 & 2 & 11 \\
+                               0 & 1 & 3 \\
+                               -1 & 0 & 3
+                        \end{pmatrix}.
+                \]
+        \end{problem}
+
+        \paragraph{}
+        La matrice \`{e} gi\`{a} quadrata, quindi si calcola il determinante della matrice $ 3 \times 3 $.
+
+        \[
+                det(M) = 17.
+        \]
+
+        Il $ det(M) \not= 0$ e quindi \framebox{$ Rk(M) = 3 $}.
+        Poich\'{e}' $ Rk(M) = 3 = min(3,3) $, \ul{il rango di $M$ \`{e} massimo}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio A3}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Determinare gli autovalori e gli autovettori dell'operatore lineare di $\mathbb{R}^2$ in $\mathbb{R}^2$
+                che manda i due vettori $ e_1, e_2 $ della base canonica di $\mathbb{R}^2$ rispettivamente in
+                $(1,1)$ e $(0,5)$.
+        \end{problem}
+
+        \paragraph{}
+        La matrice canonica dell'applicazione lineare \`{e}
+        $
+                A =     \bigl(f(e_1),f(e_2)\bigr) =
+                        \begin{pmatrix}
+                                1 & 0 \\
+                                1 & 5
+                        \end{pmatrix}.
+        $
+
+        \paragraph{}
+        Per determinare gli autovalori e gli autovettori si ricorre ad una delle definizioni di autovettore:
+        \begin{center}
+                $ A - \lambda I $ non \`{e} invertibile, ovvero $ det(A - \lambda I) = 0$.
+        \end{center}
+
+        \paragraph{}
+        Quindi
+        \[
+                A - \lambda I = \begin{pmatrix}
+                        1 & 0 \\
+                        1 & 5
+                \end{pmatrix} - \begin{pmatrix}
+                        \lambda & 0 \\
+                        0 & \lambda
+                \end{pmatrix} = \begin{pmatrix}
+                        1 - \lambda & 0 \\
+                        1 & 5 - \lambda
+                \end{pmatrix} \quad \implies
+        \]
+        \[
+                det(A - \lambda I) = \begin{pmatrix}
+                        1 - \lambda & 0 \\
+                        1 & 5 - \lambda
+                \end{pmatrix} = 0 \quad \implies
+        \]
+        \[
+                (1 - \lambda) (5 - \lambda) = 0 \quad \implies \quad \lambda_1 = 5,\ \lambda_2 = 1.
+        \]
+
+        \paragraph{}
+        Per l'autovalore \framebox{$ \lambda_2 = 1 $},
+        $
+                \begin{pmatrix}
+                        1 - \lambda & 0 \\
+                        1 & 5 - \lambda
+                \end{pmatrix} = \begin{pmatrix}
+                        0 & 0 \\
+                        1 & 4
+                \end{pmatrix}
+        $:
+        \[
+                \begin{pmatrix}
+                        0 & 0 \\
+                        1 & 4
+                \end{pmatrix}\begin{pmatrix}
+                        x \\
+                        y
+                \end{pmatrix} = \begin{pmatrix}
+                        0 \\
+                        0
+                \end{pmatrix} \quad \implies \quad
+                \begin{dcases}
+                        0  = 0 \\
+                        x + 4y = 0
+                \end{dcases} \quad \implies \quad
+                \begin{dcases}
+                        x  = a \\
+                        y = - \frac{a}{4}
+                \end{dcases}.
+        \]
+        l'autovettore \`{e} \framebox{$ a (1, - \frac{1}{4}$)}.
+
+        \paragraph{}
+        Per l'autovalore $ \lambda_2 = 5 $,
+        $
+                \begin{pmatrix}
+                        1 - \lambda & 0 \\
+                        1 & 5 - \lambda
+                \end{pmatrix} = \begin{pmatrix}
+                        -4 & 0 \\
+                        1 & 0
+                \end{pmatrix}
+        $:
+        \[
+                \begin{pmatrix}
+                        -4 & 0 \\
+                        1 & 0
+                \end{pmatrix}\begin{pmatrix}
+                        x \\
+                        y
+                \end{pmatrix} = \begin{pmatrix}
+                        0 \\
+                        0
+                \end{pmatrix} \quad \implies \quad
+                \begin{dcases}
+                        x  = 0 \\
+                        y = 0
+                \end{dcases}.
+        \]
+        l'autovettore non esiste.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B1}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Sia $G$ un gruppo, $ g \in G $, e sia $ \alpha\!:\ \mathbb{Z} \to G $ la funzione
+                definita da $ \alpha(n) = x^n $. Mostrare che $\alpha$ \`{e} un omomorfismo di gruppi.
+        \end{problem}
+
+        \paragraph{}
+        Sia il gruppo $Z$ definito con l'operazione di somma ed il gruppo $G$ con l'operazione di moltiplicazione,
+        ovvero $(Z,+), (G,\cdot)$.
+
+        \paragraph{}
+        Affinch\'{e} $\alpha$ sia un omomorfismo di gruppi deve valere che
+        \[
+                \alpha(a + b) = \alpha(a) \cdot \alpha(b) \quad \forall a,b \in Z.
+        \]
+
+        \paragraph{}
+        Da cui
+        \[
+                        \alpha(a + b) = x^{a + b} = x^a \cdot x^b = \alpha(a) \cdot \alpha(b).
+        \]
+
+        \paragraph{}
+        La propriet\`{a} \`{e} verificata, quindi \ul{$\alpha$ \`{e} un omomorfismo fra gruppi}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B2}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Usare il teorema di Lagrange per mostrare esplicitamente che un gruppo di $12$ elementi
+                non ha sottogruppi di ordine $5$ (non basta ricordare l'enunciato del teorema, occorre
+                ricordare la dimostrazione).
+        \end{problem}
+
+        \paragraph{}
+        Dal teorema di Lagrange, con $ |G:H| = r $,
+        \[
+                |G| =  r \cdot |H|
+        \]
+        da cui
+        \[
+                12 = r \cdot 5
+        \]
+        ovvero non esiste un $r$ che moltiplicato $5$ dia come valore $12$, quindi \ul{un gruppo di $12$ elementi
+        non ha sottogruppi di ordine $5$}.
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \chapter*{Esercizio B3}
+        %%%%%%%%%%%%%%%%%%%%%%%
+        \begin{problem}
+                Risolvere l'equazione $ z = - \overline{z} $ in campo complesso.
+        \end{problem}
+
+        \paragraph{}
+        Con $ z = x + iy $, il suo coniugato \`{e} definito come $ \overline{z} = x - iy $.
+
+        \paragraph{}
+        Da cui
+        \[
+                x + iy = - (x + iy) \implies x + iy = -x + iy \implies 2x = 0 \implies \framebox{$x = 0$}.
+        \]
+
+\end{document}

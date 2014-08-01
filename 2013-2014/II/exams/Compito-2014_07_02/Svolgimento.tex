@@ -1,0 +1,241 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage[top=1cm, bottom=1cm]{geometry}
+\usepackage{amsmath}    % {aligned}
+\usepackage{amssymb}    % \mathbb
+\usepackage{mathtools}  % {dcases}
+\usepackage{relsize}    % \mathlarger
+\usepackage{setspace}   % {spacing}
+\usepackage{soul}       % \ul
+\usepackage{tikz}       % \tikz, \node
+\usepackage{cancel}     % \cancel
+
+
+\newcommand*\circled[1]{
+        \tikz[baseline=(char.base)]{
+                \node[shape=circle,draw,inner sep=1pt] (char) {#1};
+        }
+}
+
+
+\begin{document}
+        %%%%%%%%%%%%%%%%%%%%%%
+        \section*{Esercizio 1}
+        %%%%%%%%%%%%%%%%%%%%%%
+        \textsl{Nel piano euclideo $E^3$ determinare:}
+
+        \noindent
+        \textsl{
+                a) l'equazione del piano per $P(1,2,1)$ e parallelo alle rette:
+                $
+                        r: \begin{dcases} x = z - 1 \\ y = 2z + 3 \end{dcases}; \;
+                        s: \begin{dcases} x = -z + 1 \\ y = 3z - 2 \end{dcases}
+                $.
+        }
+
+        L'equazione cartesiana di un piano passante per un punto $P(x_0, y_0, z_0)$ e parallelo a due rette \`{e} data da
+        \[
+                det(
+                        \begin{pmatrix}
+                                x - x_0 & y - y_0 & z - z_0 \\
+                                a_1 & b_1 & c_1 \\
+                                a_2 & b_2 & c_2 \\
+                        \end{pmatrix}
+                ) = 0
+        \]
+        dove $v_1 = (a_1, b_1, c_1)$ e $v_2 = (a_2, b_2, c_2)$ sono rispettivamente i vettori direzione delle due rette.
+        Per ricavarli \`{e} sufficiente riscrivere le equazioni delle rette dalla forma cartesiana a quella parametrica.
+
+        \[
+                r: \begin{dcases}
+                        x = & z - 1 \\
+                        y = & 2z + 3
+                \end{dcases} \quad \implies \quad
+                \begin{dcases}
+                        x = & -1 + t \\
+                        y = & 3 + 2t \\
+                        z = & t
+                \end{dcases} \quad \implies \quad
+                v_1 = (1, 2, 1).
+        \]
+
+        \[
+                s: \begin{dcases}
+                        x = & -z + 1 \\
+                        y = & 3z - 2
+                \end{dcases} \quad \implies \quad
+                \begin{dcases}
+                        x = & 1 - t \\
+                        y = & -2 + 3t\\
+                        z = & t
+                \end{dcases} \quad \implies \quad
+                v_2 = (-1, 3, 1).
+        \]
+
+        Da cui,
+        \[
+                \begin{aligned}
+                        det(
+                                \begin{pmatrix}
+                                        x - 1 & y - 2 & z - 1 \\
+                                        1     & 2     & 1 \\
+                                        -1    & 3     & 1 \\
+                                \end{pmatrix}
+                        ) & = \framebox{ -x - 2y + 5z = 0 }
+                \end{aligned}
+        \]
+
+        \noindent
+        \textsl{
+                b) l'equazione del piano per $P(1,1,1)$ e perpendicolare alla retta:
+                $
+                        t: \begin{dcases}
+                                x + 2y - z - 1 = 0 \\
+                                2x - y - 2z + 3  = 0
+                        \end{dcases}
+                $.
+        }
+
+        La generica equazione di un piano \`{e}
+        \[
+                ax_0 + by_0 + cz_0 + d = 0
+        \]
+        ovvero \`{e} descritta mediante un punto interno al piano, un vettore ortogonale al piano ed una costante. Conoscendo un punto interno al piano ed un vettore ortogonale al piano \`{e} possibile ricavare la costante $d$.
+
+        \paragraph{}
+        Le coordinate del punto interno sono note ed il vettore ortogonale al piano \`{e} dato dal vettore direzione della retta $t$ perpendicolare al piano.
+
+        \paragraph{}
+        Essendo per\`{o} $t$ descritta mediante due equazioni del piano, per ricavare il vettore direzione di $t$ bisogna eseguire il prodotto tra i vettori dei dua piani che la descrivono, ottenendo cos\`{i} il vettore ortogonale, ovvero il vettore direzione di $t$.
+
+        \paragraph{}
+        $(a_1, b_1, c_1)$ e $(a_2, b_2, c_2)$ sono i due vettori ortogonali ai piani che descrivono la retta $t$ e sono dati rispettivamente dai coefficienti dei due piani.
+
+        \paragraph{}
+        Quindi
+        \[
+                \begin{aligned}
+                        v_t & = (a_1, b_1, c_1) \times (a_2, b_2, c_2) = det\begin{pmatrix}
+                                x & y & z \\
+                                a_1 & b_1 & c_1 \\
+                                a_2 & b_2 & c_2
+                        \end{pmatrix} = [ (b_1 c_2 - c_1 b_2), (c_1 a_2 - a_1 c_2), (a_1 b_2 - b_1 a_2)] \\
+                        & = (-5, 0, -5).
+                \end{aligned}
+        \]
+
+        \paragraph{}
+        $-5 \cdot 1 + 0 \cdot 1 - 5 \cdot 1 + d = 0 \implies d = 10.$
+
+        \paragraph{}
+        \framebox{$-5x -5z + 10 = 0.$}
+
+        \newpage
+
+
+        %%%%%%%%%%%%%%%%%%%%%%
+        \section*{Esercizio 2}
+        %%%%%%%%%%%%%%%%%%%%%%
+        \textsl{
+                Determinare l'equazione della retta passante per $P(3,2)$ tangente la circonferenza
+                \[ x^2 + y^2 - 2x -2y = 1. \]
+        }
+
+        Per prima cosa si verifica se il punto appartiene alla circonferenza.
+
+        \[
+                9 + 4 -6 -4 -1 = 0 \implies 2 = 0. \mbox{ $P$ non appartiene alla circonferenza. }
+        \]
+
+        Il fascio di rette passanti per il punto P è
+        \[
+                y - 2 = m(x - 3);
+        \]
+        \[
+                mx -y -3m + 2 = 0.
+        \]
+
+        Le soluzioni del sistema dato dall'equazione della circonferenza e quella della retta
+        sono i punti di intersezione. Per risolvere il sistema e trovare la tangente si impone
+        la condizione di tangenza, ovvero $\Delta = b^2 - 4ac = 0$ sul polinomio di secondo grado.
+        \[
+                \begin{dcases}
+                        x^2 + y^2 - 2x -2y - 1 = 0 \\
+                        mx -y -3m + 2 = 0
+                \end{dcases} \quad \implies \quad
+                \begin{aligned}
+                        x^2 + (mx -3m + 2)^2 - 2x -2(mx -3m + 2) - 1 = 0 \\
+                        y = mx -3m + 2
+                \end{aligned}
+        \]
+        \[
+                \quad \implies \quad
+                \begin{aligned}
+                        & x^2 + m^2x^2 - 3m^2x + 2mx - 3m^2x 9m^2 - 6m + 2mx \mbox{ \cancel{- 6m}} \mbox{ \cancel{+ 4}} - 2x -2mx \mbox{ \cancel{+ 6m}} \mbox{ \cancel{-4}} - 1 = 0 \\
+                        & y = mx -3m + 2
+                \end{aligned}
+        \]
+
+        TODO
+
+        \newpage
+
+
+        %%%%%%%%%%%%%%%%%%%%%%
+        \section*{Esercizio 3}
+        %%%%%%%%%%%%%%%%%%%%%%
+        \textsl{
+                Si cosideri l'equazione $x^2 + y^2 + kx -3ky - 1 = 0$.
+        }
+
+        \paragraph{}
+        \textsl{
+                a) Dire per quali valori di $k \in \mathbb{R}$ rappresenta una circonferenza.
+        }
+
+        Per qualsiasi $k$.
+
+        \paragraph{}
+        \textsl{
+                b) Determinare i valori di $k$ per cui la circonferenza interseca gli assi cartesiani nei punti $P_1,P_2$ tali che $d(P_1,P_2) = 3$.
+        }
+
+        \paragraph{}
+        Per determinare le intersezioni con gli assi è sufficiente mettere a sistema l'equzione della circonferenza con le equazioni degli assi cartesiani, ed imporre la distanza fra due punti uguale a 3.
+
+        \[
+                P(0,\ldots) = \begin{dcases}
+                        x^2 + y^2 + kx -3ky - 1 = 0 \\
+                        x = 0
+                \end{dcases}
+                \quad ; \quad
+                \begin{aligned}
+                        y^2 -3ky - 1 = 0 \\
+                        x = 0
+                \end{aligned}
+                \quad ; \quad
+                \begin{aligned}
+                        y_{1,2} = 3k \pm \sqrt{9k^2 + 4} \\
+                        x = 0
+                \end{aligned}\;.
+        \]
+
+        \[
+                P(\ldots,0) = \begin{dcases}
+                        x^2 + y^2 + kx -3ky - 1 = 0 \\
+                        y = 0
+                \end{dcases}
+                \quad ; \quad
+                \begin{aligned}
+                        x^2 + kx - 1 = 0 \\
+                        y = 0
+                \end{aligned}
+                \quad ; \quad
+                \begin{aligned}
+                        x = -k \pm \sqrt{k^2 + 4} \\
+                        y = 0
+                \end{aligned}\;.
+        \]
+
+\end{document}

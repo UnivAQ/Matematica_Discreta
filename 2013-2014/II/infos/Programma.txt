@@ -1,0 +1,11 @@
+Geometria Euclidea piana,
+        angoli,
+        radianti,
+        triangoli,
+        circonferenze,
+        simmetria,
+        trasformazioni piane,
+        coordinate cartesiane e equazioni di semplici figure piane,
+        elementi di trigonometria,
+        elementi di geometria euclidea dello spazio,
+        volume.

@@ -1,0 +1,19 @@
+Prima parte:
+- Operazioni tra matrici
+- Calcolo del determinante
+- Cambiamento di base di una matrice
+- Sistemi di equazioni lineari
+- Calcolo del nucleo di una matrice
+- Calcolo della matrice inversa
+- Metodo di eliminazione di Gauss (Riduzione a scala)
+- Vettori e Autovettori
+- Calcolo dell'immagine di un'applicazione
+- Ortogonalizzazione
+
+Seconda parte:
+- Algoritmo euclideo per il calcolo del MCD
+- Congruenze
+- Permutazioni
+- Equazioni diofantee
+- Modulo e argomento di numeri complessi
+- Anelli

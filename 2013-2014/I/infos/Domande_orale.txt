@@ -1,0 +1,20 @@
+2014/06/24
+        Omomorfismo
+        + Trasformazione lineare
+        + Teorema di un omomorfismo su un campo
+        Autovettore
+        MCD
+        Anelli
+        Campo
+        Teorema di nullità più rango
+
+2014/07/10
+        Che cos'è la divisione con resto?
+        Significato degli autovettori e degli autovalori
+        Anelli
+        Teorema dell'omomorfismo
+        Teorema di nullità più rango
+        Teorema di Lagrange
+        Classi resto
+        K[x] / f è un campo se e solo se è irriducibile
+        Trasformazioni lineari
